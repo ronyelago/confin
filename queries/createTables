@@ -18,3 +18,5 @@ CREATE TABLE IF NOT EXISTS ContaPagar (
     DataPagamento TIMESTAMP,
     Status INTEGER
 );
+
+//oi, eu sou o Goku
