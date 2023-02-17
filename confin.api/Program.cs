@@ -1,24 +1,36 @@
+using System.Text.Json.Serialization;
+using confin.data;
+using confin.data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers()
+    .AddJsonOptions(opt => 
+    {
+        opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors();
+
+builder.Services.AddScoped<DbSession>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddTransient<CompraRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
 
 app.MapControllers();
 

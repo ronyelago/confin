@@ -2,7 +2,7 @@
 using confin.domain;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Finacon.Controllers
+namespace confin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
