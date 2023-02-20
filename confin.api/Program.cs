@@ -1,6 +1,8 @@
 using System.Text.Json.Serialization;
 using confin.data;
 using confin.data.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,9 @@ builder.Services.AddCors();
 builder.Services.AddScoped<DbSession>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<CompraRepository>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<>();
 
 var app = builder.Build();
 
