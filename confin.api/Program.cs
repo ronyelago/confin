@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using confin.api.validators;
 using confin.data;
 using confin.data.Repositories;
 using FluentValidation;
@@ -20,7 +21,8 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<CompraRepository>();
 
 builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssemblyContaining<>();
+builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
