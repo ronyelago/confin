@@ -1,4 +1,6 @@
-﻿using confin.data.Repositories;
+﻿using AutoMapper;
+using confin.api.models;
+using confin.data.Repositories;
 using confin.domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +11,13 @@ namespace confin.Controllers
     public class CompraController : ControllerBase
     {
         private readonly CompraRepository _compraRepository;
+        private IMapper _mapper;
 
-        public CompraController(CompraRepository compraRepository)
+        public CompraController(CompraRepository compraRepository
+            ,IMapper mapper)
         {
             _compraRepository = compraRepository;
+            _mapper = mapper;
         }
 
         [HttpGet("ObterTodasCompras")]
@@ -31,13 +36,13 @@ namespace confin.Controllers
         }
 
         [HttpPost("NovaCompra")]
-        public async Task<IActionResult> Post([FromBody] Compra compra)
+        public async Task<IActionResult> Post([FromBody] NovaCompraModel compraModel)
         {
             try
             {
-                await _compraRepository.Save(compra);
+                await _compraRepository.Save(_mapper.Map<Compra>(compraModel));
 
-                return Created("", compra);
+                return Created("", compraModel);
             }
             catch (Exception ex)
             {
