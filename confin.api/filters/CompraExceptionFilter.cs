@@ -6,7 +6,7 @@ namespace confin.api.filters
     {
         public void OnException(ExceptionContext context)
         {
-            
+            //labigula caligugula
         }
     }
 }
