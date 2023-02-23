@@ -41,9 +41,9 @@ internal class Program
         builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-        // using var logger = new LoggerConfiguration().WriteTo.Console(LogEventLevel.Debug).CreateLogger();
-        // builder.Logging.AddSerilog(logger);
-        SerilogExtension
+        using var logger = new LoggerConfiguration().WriteTo.Console(LogEventLevel.Debug).CreateLogger();
+        builder.Logging.AddSerilog(logger);
+        builder.Host.UseSerilog();
 
         var app = builder.Build();
 
