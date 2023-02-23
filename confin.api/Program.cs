@@ -5,6 +5,7 @@ using confin.data;
 using confin.data.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Serilog;
 
 internal class Program
 {
@@ -37,9 +38,10 @@ internal class Program
 
         builder.Services.AddFluentValidationAutoValidation();
         builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
-
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+        var logger = new LoggerConfiguration().CreateLogger();
+        builder.Logging.AddSerilog(logger);
 
         var app = builder.Build();
 

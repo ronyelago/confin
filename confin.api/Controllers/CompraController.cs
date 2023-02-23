@@ -12,7 +12,6 @@ namespace confin.Controllers
     {
         private readonly CompraRepository _compraRepository;
         private IMapper _mapper;
-        private ILogger _logger;
 
         public CompraController(CompraRepository compraRepository
             ,IMapper mapper
@@ -20,7 +19,6 @@ namespace confin.Controllers
         {
             _compraRepository = compraRepository;
             _mapper = mapper;
-            _logger = logger;
         }
 
         [HttpGet("ObterTodasCompras")]
@@ -28,7 +26,6 @@ namespace confin.Controllers
         {
             try
             {
-                _logger.LogInformation("*****Obtendo todas as compras*****");
                 var compras = await _compraRepository.Get();
 
                 return Ok(compras);
