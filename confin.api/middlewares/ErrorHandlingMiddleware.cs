@@ -1,5 +1,5 @@
 using System.Net;
-using Newtonsoft.Json;
+using confin.api.models;
 using Serilog;
 
 namespace confin.api.middlewares
@@ -29,17 +29,16 @@ namespace confin.api.middlewares
         {
             Log.Error(exception, "Error");
 
-            var code = HttpStatusCode.InternalServerError;
+            var code = HttpStatusCode.BadRequest;
             
-            var result = JsonConvert.SerializeObject(new 
-            { 
-                error = $"{ exception?.Message }; {exception?.InnerException?.Message}"
-            });
-
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)code;
 
-            return context.Response.WriteAsync(result);
+            return context.Response.WriteAsync(new ErrorDetails
+            {
+                StatusCode = context.Response.StatusCode,
+                Message = $"Deu ruim => { exception?.Message }; {exception?.InnerException?.Message}"
+            }.ToString());
         }
     }
 }

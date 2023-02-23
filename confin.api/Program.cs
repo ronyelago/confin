@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using confin.api.extensions;
-using confin.api.filters;
 using confin.api.middlewares;
 using confin.api.validators;
 using confin.data;
@@ -19,14 +18,11 @@ internal class Program
         
         builder.Host.UseSerilog(Log.Logger);
 
-        builder.Services.AddControllers(opt =>
-        {
-            opt.Filters.Add(typeof(CompraExceptionFilter));
-        }).AddJsonOptions(opt =>
+        builder.Services.AddControllers().AddJsonOptions(opt =>
         {
             opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
         });
-        
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddCors();
@@ -51,12 +47,8 @@ internal class Program
         }
 
         app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
-
-
         app.MapControllers();
 
         app.Run();

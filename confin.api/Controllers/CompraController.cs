@@ -27,32 +27,18 @@ namespace confin.Controllers
         [HttpGet("ObterTodasCompras")]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                Log.Information("*****ObterTodasAsCompras*****");
-                var compras = await _compraRepository.Get();
+            Log.Information("*****ObterTodasAsCompras*****");
+            var compras = await _compraRepository.Get();
 
-                return Ok(compras);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message}; {ex.InnerException?.Message}"); 
-            }
+            return Ok(compras);
         }
 
         [HttpPost("NovaCompra")]
         public async Task<IActionResult> Post([FromBody] NovaCompraModel compraModel)
         {
-            try
-            {
-                await _compraRepository.Save(_mapper.Map<Compra>(compraModel));
+            await _compraRepository.Save(_mapper.Map<Compra>(compraModel));
 
-                return Created("", compraModel);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest($"{ex.Message}; {ex.InnerException?.Message}");
-            }
+            return Created("", compraModel);
         }
     }
 }
