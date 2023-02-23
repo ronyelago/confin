@@ -1,26 +1,23 @@
 using System.Text.Json.Serialization;
+using confin.api.extensions;
 using confin.api.filters;
+using confin.api.middlewares;
 using confin.api.validators;
 using confin.data;
 using confin.data.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Serilog;
-using Serilog.Events;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
-        // builder.Logging.ClearProviders();
-        // builder.Logging.AddConsole();
-        // builder.Host.ConfigureLogging(logging => 
-        // {
-        //     logging.ClearProviders();
-        //     logging.AddConsole();
-        // });
+        
+        SerilogExtension.AddSerilogApi(builder.Configuration);
+        
+        builder.Host.UseSerilog(Log.Logger);
 
         builder.Services.AddControllers(opt =>
         {
@@ -41,13 +38,10 @@ internal class Program
         builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-        using var logger = new LoggerConfiguration().WriteTo.Console(LogEventLevel.Debug).CreateLogger();
-        builder.Logging.AddSerilog(logger);
-        builder.Host.UseSerilog();
-
         var app = builder.Build();
 
-        app.Logger.LogInformation("*****Starting confin.api*****");
+        app.UseMiddleware<ErrorHandlingMiddleware>();
+        app.UseMiddleware<RequestSerilogMiddleware>();
 
         if (app.Environment.IsDevelopment())
         {
