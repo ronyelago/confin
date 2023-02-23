@@ -20,7 +20,6 @@ internal class Program
         //     logging.AddConsole();
         // });
 
-
         builder.Services.AddControllers(opt =>
         {
             opt.Filters.Add(typeof(CompraExceptionFilter));
@@ -32,8 +31,6 @@ internal class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddCors();
 
-        
-        // builder.Services.AddSingleton(sp => sp.GetRequiredService<ILoggerFactory>());
         builder.Services.AddScoped<DbSession>();
         builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
         builder.Services.AddTransient<CompraRepository>();
