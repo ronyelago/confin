@@ -6,42 +6,50 @@ using confin.data.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers(opt => 
+internal class Program
 {
-    opt.Filters.Add(typeof(CompraExceptionFilter));
-}).AddJsonOptions(opt => 
-{
-    opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-});
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddCors();
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<DbSession>();
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-builder.Services.AddTransient<CompraRepository>();
+        builder.Services.AddControllers(opt =>
+        {
+            opt.Filters.Add(typeof(CompraExceptionFilter));
+        }).AddJsonOptions(opt =>
+        {
+            opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        });
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+        builder.Services.AddCors();
 
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
+        builder.Services.AddScoped<DbSession>();
+        builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+        builder.Services.AddTransient<CompraRepository>();
+
+        builder.Services.AddFluentValidationAutoValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
+
+        builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
-var app = builder.Build();
+        var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+        app.UseHttpsRedirection();
+
+        app.UseAuthorization();
+
+
+        app.MapControllers();
+
+        app.Run();
+    }
 }
-
-app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-
-app.MapControllers();
-
-app.Run();

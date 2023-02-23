@@ -12,12 +12,15 @@ namespace confin.Controllers
     {
         private readonly CompraRepository _compraRepository;
         private IMapper _mapper;
+        private ILogger _logger;
 
         public CompraController(CompraRepository compraRepository
-            ,IMapper mapper)
+            ,IMapper mapper
+            ,ILogger logger)
         {
             _compraRepository = compraRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         [HttpGet("ObterTodasCompras")]
