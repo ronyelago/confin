@@ -28,6 +28,7 @@ namespace confin.Controllers
         {
             try
             {
+                _logger.LogInformation("*****Obtendo todas as compras*****");
                 var compras = await _compraRepository.Get();
 
                 return Ok(compras);

@@ -12,6 +12,15 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // builder.Logging.ClearProviders();
+        // builder.Logging.AddConsole();
+        // builder.Host.ConfigureLogging(logging => 
+        // {
+        //     logging.ClearProviders();
+        //     logging.AddConsole();
+        // });
+
+
         builder.Services.AddControllers(opt =>
         {
             opt.Filters.Add(typeof(CompraExceptionFilter));
@@ -23,6 +32,8 @@ internal class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddCors();
 
+        
+        // builder.Services.AddSingleton(sp => sp.GetRequiredService<ILoggerFactory>());
         builder.Services.AddScoped<DbSession>();
         builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
         builder.Services.AddTransient<CompraRepository>();
@@ -34,6 +45,8 @@ internal class Program
 
 
         var app = builder.Build();
+
+        app.Logger.LogInformation("*****Starting Confin Api*****");
 
         if (app.Environment.IsDevelopment())
         {
