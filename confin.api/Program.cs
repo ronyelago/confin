@@ -6,6 +6,7 @@ using confin.data.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Serilog;
+using Serilog.Events;
 
 internal class Program
 {
@@ -40,12 +41,13 @@ internal class Program
         builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-        using var logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
-        builder.Logging.AddSerilog(logger);
+        // using var logger = new LoggerConfiguration().WriteTo.Console(LogEventLevel.Debug).CreateLogger();
+        // builder.Logging.AddSerilog(logger);
+        SerilogExtension
 
         var app = builder.Build();
 
-        app.Logger.LogInformation("*****Starting Confin Api*****");
+        app.Logger.LogInformation("*****Starting confin.api*****");
 
         if (app.Environment.IsDevelopment())
         {

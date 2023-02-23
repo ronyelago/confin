@@ -3,6 +3,7 @@ using confin.api.models;
 using confin.data.Repositories;
 using confin.domain;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace confin.Controllers
 {
@@ -14,8 +15,7 @@ namespace confin.Controllers
         private IMapper _mapper;
 
         public CompraController(CompraRepository compraRepository
-            ,IMapper mapper
-            ,ILogger logger)
+            ,IMapper mapper)
         {
             _compraRepository = compraRepository;
             _mapper = mapper;
@@ -26,6 +26,7 @@ namespace confin.Controllers
         {
             try
             {
+                Log.Information("*****ObterTodasAsCompras*****");
                 var compras = await _compraRepository.Get();
 
                 return Ok(compras);
