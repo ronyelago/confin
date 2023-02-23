@@ -26,6 +26,7 @@ internal class Program
         {
             opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
         });
+        
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddCors();
