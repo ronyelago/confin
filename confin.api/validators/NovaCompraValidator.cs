@@ -12,7 +12,7 @@ namespace confin.api.validators
             RuleFor(x => x.Descricao).NotEmpty().MinimumLength(3).MaximumLength(64);
             RuleFor(x => x.Valor).NotEmpty().GreaterThan(0);
             RuleFor(x => x.FormaPagamento).NotEmpty();
-            RuleFor(x => x.DataCompra).LessThanOrEqualTo(DateTime.Now); /rapid
-        } /;/lobeca
+            RuleFor(x => x.DataCompra).LessThanOrEqualTo(DateTime.Now);
+        }
     }
 }
