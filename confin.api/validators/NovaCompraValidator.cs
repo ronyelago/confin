@@ -13,6 +13,6 @@ namespace confin.api.validators
             RuleFor(x => x.Valor).NotEmpty().GreaterThan(0);
             RuleFor(x => x.FormaPagamento).NotEmpty();
             RuleFor(x => x.DataCompra).LessThanOrEqualTo(DateTime.Now); /rapid
-        }
+        } /;/lobeca
     }
 }
