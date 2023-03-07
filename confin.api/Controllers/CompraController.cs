@@ -27,7 +27,7 @@ namespace confin.Controllers
         [HttpGet("ObterTodasCompras")]
         public async Task<IActionResult> Get()
         {
-            Log.Information("*****Obtendo todas as compra manow...*****");
+            Log.Information("*****Obtendo todas as compra labigula...*****");
             var compras = await _compraRepository.Get();
 
             return Ok(compras);
