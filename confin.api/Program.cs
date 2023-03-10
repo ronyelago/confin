@@ -41,14 +41,10 @@ internal class Program
         app.UseMiddleware<ErrorHandlingMiddleware>();
         app.UseMiddleware<RequestSerilogMiddleware>();
 
-        // if (app.Environment.IsDevelopment())
-        // {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        // }
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-        //app.UseHttpsRedirection();
         app.UseAuthorization();
         app.MapControllers();
 
