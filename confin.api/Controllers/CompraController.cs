@@ -33,6 +33,13 @@ namespace confin.Controllers
             return Ok(compras);
         }
 
+        [HttpGet("ObterCartao")]
+        public async Task<IActionResult> GetCards()
+        {
+
+            return Ok(new { number = 01111987 });
+        }
+
         [HttpPost("NovaCompra")]
         public async Task<IActionResult> Post([FromBody] NovaCompraModel compraModel)
         {
