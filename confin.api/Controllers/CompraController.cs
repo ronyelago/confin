@@ -29,7 +29,7 @@ namespace confin.Controllers
         {
             Log.Information("*****Obtendo todas as comprinhas*****");
             // var compras = await _compraRepository.Get();
-            var compras = new {msg = "bosta de cavalo"};
+            var compras = new {msg = "bosta de bode"};
 
             return Ok(compras);
         }
