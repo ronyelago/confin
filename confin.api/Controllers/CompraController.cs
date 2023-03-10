@@ -28,8 +28,7 @@ namespace confin.Controllers
         public async Task<IActionResult> Get()
         {
             Log.Information("*****Obtendo todas as comprinhas*****");
-            // var compras = await _compraRepository.Get();
-            var compras = new {msg = "bosta de bode"};
+            var compras = await _compraRepository.Get();
 
             return Ok(compras);
         }
