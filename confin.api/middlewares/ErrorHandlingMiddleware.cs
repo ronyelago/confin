@@ -37,7 +37,7 @@ namespace confin.api.middlewares
             return context.Response.WriteAsync(new ErrorDetails
             {
                 StatusCode = context.Response.StatusCode,
-                Message = $"Deu ruim, pumblas => { exception?.Message }; {exception?.InnerException?.Message}"
+                Message = $"Deu ruim, pumblas.. => { exception?.Message }; {exception?.InnerException?.Message}"
             }.ToString());
         }
     }
