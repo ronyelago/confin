@@ -8,7 +8,7 @@ namespace confin.domain
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
-        public bool Parcelado { get; set; }
+        public bool Parcelada { get; set; }
         public DateTime DataCompra { get; set; }
     }
 
