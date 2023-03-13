@@ -6,6 +6,7 @@ namespace confin.api.models
     {
         public string? Descricao { get; set; }
         public decimal Valor { get; set; }
+        public bool Parcelada { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public DateTime DataCompra { get; set; }
     }
