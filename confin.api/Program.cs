@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using confin.api.extensions;
+using confin.api.interfaces.repositories;
 using confin.api.middlewares;
 using confin.api.validators;
 using confin.data;
@@ -30,6 +31,7 @@ internal class Program
         builder.Services.AddScoped<DbSession>();
         builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
         builder.Services.AddTransient<CompraRepository>();
+        builder.Services.AddTransient<IContaRepository, ContaRepository>();
 
         builder.Services.AddFluentValidationAutoValidation();
         builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();

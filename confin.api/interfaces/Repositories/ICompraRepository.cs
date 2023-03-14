@@ -1,6 +1,6 @@
 ﻿using confin.domain;
 
-namespace confin.interfaces.Repositories
+namespace confin.api.interfaces.repositories
 {
     public interface ICompraRepository
     {
