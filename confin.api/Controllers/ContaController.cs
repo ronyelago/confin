@@ -1,10 +1,8 @@
 using AutoMapper;
 using confin.api.interfaces.repositories;
 using confin.api.models;
-using confin.data.Repositories;
 using confin.domain;
 using Microsoft.AspNetCore.Mvc;
-using Serilog;
 
 namespace confin.Controllers
 {
