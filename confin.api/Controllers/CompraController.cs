@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using confin.api.interfaces.repositories;
 using confin.api.models;
-using confin.data.Repositories;
 using confin.domain;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -11,11 +11,11 @@ namespace confin.Controllers
     [ApiController]
     public class CompraController : ControllerBase
     {
-        private readonly CompraRepository _compraRepository;
+        private readonly ICompraRepository _compraRepository;
         private readonly ILogger<CompraController> _logger;
         private IMapper _mapper;
 
-        public CompraController(CompraRepository compraRepository
+        public CompraController(ICompraRepository compraRepository
             ,IMapper mapper
             ,ILogger<CompraController> logger)
         {
@@ -27,7 +27,7 @@ namespace confin.Controllers
         [HttpGet("ObterTodasCompras")]
         public async Task<IActionResult> Get()
         {
-            Log.Information("*****Obtendo todas as compras*****");
+            Log.Information("=> Obtendo todas as compras...");
             var compras = await _compraRepository.Get();
 
             return Ok(compras);

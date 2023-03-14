@@ -30,7 +30,7 @@ internal class Program
 
         builder.Services.AddScoped<DbSession>();
         builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-        builder.Services.AddTransient<CompraRepository>();
+        builder.Services.AddTransient<ICompraRepository, CompraRepository>();
         builder.Services.AddTransient<IContaRepository, ContaRepository>();
 
         builder.Services.AddFluentValidationAutoValidation();
