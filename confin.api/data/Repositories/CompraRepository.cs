@@ -16,7 +16,7 @@ namespace confin.data.Repositories
 
         public async Task<IEnumerable<Compra>> Get()
         {
-            const string query = @"SELECT id, descricao, valor, formaPagamento, dataCompra FROM compra";
+            const string query = @"SELECT id, descricao, valor, formaPagamento, parcelada, dataCompra FROM compra";
 
             var result = await _session.Connection.QueryAsync<Compra>(query, null, _session.Transaction);
 
