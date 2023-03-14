@@ -13,7 +13,7 @@ namespace confin.Controllers
         private IMapper _mapper;
         private readonly IContaRepository _contaRepository;
 
-        public ContaController(IMapper mapper, ContaRepository contaRepository)
+        public ContaController(IMapper mapper, IContaRepository contaRepository)
         {
             _mapper = mapper;
             _contaRepository = contaRepository;
