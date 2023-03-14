@@ -3,6 +3,7 @@ using confin.api.interfaces.repositories;
 using confin.api.models;
 using confin.domain;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace confin.Controllers
 {
@@ -15,6 +16,15 @@ namespace confin.Controllers
         {
             _mapper = mapper;
             _contaRepository = contaRepository;
+        }
+
+        [HttpGet("ObterTodasContas")]
+        public async Task<IActionResult> Get()
+        {
+            Log.Information("=> Obtendo todas as contas..");
+            var compras = await _contaRepository.Get();
+
+            return Ok(compras);
         }
 
         [HttpPost("NovaConta")]

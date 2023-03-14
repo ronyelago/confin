@@ -14,9 +14,18 @@ namespace confin.data.Repositories
             _session = session;
         }
 
-        public Task<IEnumerable<Conta>> Get()
+        public async Task<IEnumerable<Conta>> Get()
         {
-            throw new NotImplementedException();
+            const string query = @"SELECT id
+                                          ,descricao
+                                          ,valor
+                                          ,variabilidade
+                                          ,vencimento 
+                                          FROM compra";
+
+            var result = await _session.Connection.QueryAsync<Conta>(query, null, _session.Transaction);
+
+            return result;
         }
 
         public async Task Save(Conta conta)
