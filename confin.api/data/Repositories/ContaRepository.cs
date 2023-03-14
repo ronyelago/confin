@@ -21,7 +21,7 @@ namespace confin.data.Repositories
                                           ,valor
                                           ,variabilidade
                                           ,vencimento 
-                                          FROM compra";
+                                          FROM conta";
 
             var result = await _session.Connection.QueryAsync<Conta>(query, null, _session.Transaction);
 
