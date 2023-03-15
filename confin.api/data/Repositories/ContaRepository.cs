@@ -20,6 +20,8 @@ namespace confin.data.Repositories
                                           ,descricao
                                           ,valor
                                           ,variabilidade
+                                          ,observacoes
+                                          ,status
                                           ,vencimento 
                                           FROM conta";
 
