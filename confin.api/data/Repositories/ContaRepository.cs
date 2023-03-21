@@ -32,20 +32,20 @@ namespace confin.data.Repositories
 
         public async Task Save(Conta conta)
         {
-                        string query = $@"INSERT INTO conta(
-                                            descricao
-                                            ,valor
-                                            ,variabilidade
-                                            ,observacoes
-                                            ,status
-                                            ,vencimento) 
-                                        VALUES(
-                                            @Descricao,
-                                            @Valor,
-                                            @Variabilidade,
-                                            @Observacoes,
-                                            @Status,
-                                            @Vencimento)";
+            string query = $@"INSERT INTO conta(
+                                descricao
+                                ,valor
+                                ,variabilidade
+                                ,observacoes
+                                ,status
+                                ,vencimento) 
+                            VALUES(
+                                @Descricao,
+                                @Valor,
+                                @Variabilidade,
+                                @Observacoes,
+                                @Status,
+                                @Vencimento)";
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("Descricao", conta.Descricao, DbType.String);
