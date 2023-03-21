@@ -18,10 +18,8 @@ namespace confin.data.Repositories
         {
             const string query = @"SELECT id
                                           ,descricao
-                                          ,valor
                                           ,variabilidade
                                           ,observacoes
-                                          ,status
                                           ,vencimento 
                                           FROM conta";
 
@@ -34,10 +32,8 @@ namespace confin.data.Repositories
         {
             string query = $@"INSERT INTO conta(
                                 descricao
-                                ,valor
                                 ,variabilidade
                                 ,observacoes
-                                ,status
                                 ,vencimento) 
                             VALUES(
                                 @Descricao,
@@ -49,10 +45,8 @@ namespace confin.data.Repositories
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("Descricao", conta.Descricao, DbType.String);
-            parameters.Add("Valor", conta.Valor, DbType.Decimal);
             parameters.Add("Variabilidade", conta.Variabilidade, DbType.Int16);
             parameters.Add("Observacoes", conta.Observacoes, DbType.String);
-            parameters.Add("Status", conta.Status, DbType.Int16);
             parameters.Add("Vencimento", conta.Vencimento, DbType.DateTime);
 
             await _session.Connection.ExecuteAsync(query, parameters);
