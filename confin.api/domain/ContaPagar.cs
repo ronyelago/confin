@@ -13,6 +13,5 @@ namespace confin.domain
         Pendente = 0,
         Paga = 1,
         Atrasada = 2
-
     }
 }

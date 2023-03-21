@@ -9,5 +9,6 @@
         public string Observacoes { get; set; }
         public int? Status { get; set; }
         public DateTime Vencimento { get; set; }
+        public List<ContaPagar> ContasPagar { get; set; }
     }
 }
