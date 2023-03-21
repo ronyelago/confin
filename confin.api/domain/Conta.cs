@@ -8,6 +8,7 @@
         public string Observacoes { get; set; }
         public DateTime Vencimento { get; set; }
         public DateTime DataExpiracao { get; set; }
+        public bool Ativa { get; set; }
         public List<ContaPagar> ContasPagar { get; set; }
     }
 }
