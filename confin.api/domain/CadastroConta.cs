@@ -9,6 +9,6 @@
         public DateTime Vencimento { get; set; }
         public DateTime DataExpiracao { get; set; }
         public bool Ativa { get; set; }
-        public List<ContaPagar> ContasPagar { get; set; }
+        public List<Conta> ContasPagar { get; set; }
     }
 }
