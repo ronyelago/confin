@@ -1,14 +1,17 @@
-﻿namespace confin.domain
+namespace confin.domain
 {
     public class Conta
     {
         public int Id { get; set; }
-        public string Descricao { get; set; }
-        public Int16 Variabilidade { get; set; }
-        public string Observacoes { get; set; }
-        public DateTime Vencimento { get; set; }
-        public DateTime DataExpiracao { get; set; }
-        public bool Ativa { get; set; }
-        public List<ContaPagar> ContasPagar { get; set; }
+        public CadastroConta CadastroConta { get; set; }
+        public decimal Valor { get; set; }
+        public StatusConta Status { get; set; }
+    }
+
+    public enum StatusConta
+    {
+        Pendente = 0,
+        Paga = 1,
+        Atrasada = 2
     }
 }

@@ -14,7 +14,7 @@ namespace confin.data.Repositories
             _session = session;
         }
 
-        public async Task<IEnumerable<Conta>> Get()
+        public async Task<IEnumerable<CadastroConta>> Get()
         {
             const string query = @"SELECT id
                                           ,descricao
@@ -23,12 +23,12 @@ namespace confin.data.Repositories
                                           ,vencimento 
                                           FROM conta";
 
-            var result = await _session.Connection.QueryAsync<Conta>(query, null, _session.Transaction);
+            var result = await _session.Connection.QueryAsync<CadastroConta>(query, null, _session.Transaction);
 
             return result;
         }
 
-        public async Task Save(Conta conta)
+        public async Task Save(CadastroConta conta)
         {
             string query = $@"INSERT INTO conta(
                                 descricao
