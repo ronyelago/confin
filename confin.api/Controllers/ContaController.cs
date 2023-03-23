@@ -10,9 +10,9 @@ namespace confin.Controllers
     public class ContaController : ControllerBase
     {
         private IMapper _mapper;
-        private readonly IContaRepository _contaRepository;
+        private readonly ICadastroContaRepository _contaRepository;
 
-        public ContaController(IMapper mapper, IContaRepository contaRepository)
+        public ContaController(IMapper mapper, ICadastroContaRepository contaRepository)
         {
             _mapper = mapper;
             _contaRepository = contaRepository;
@@ -30,7 +30,7 @@ namespace confin.Controllers
         [HttpPost("NovaConta")]
         public async Task<IActionResult> Post([FromBody] NovaContaModel contaModel)
         {
-            await _contaRepository.Save(_mapper.Map<Conta>(contaModel));
+            await _contaRepository.Save(_mapper.Map<CadastroConta>(contaModel));
 
             return Created("", contaModel);
         }

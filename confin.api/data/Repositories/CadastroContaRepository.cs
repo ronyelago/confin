@@ -5,11 +5,11 @@ using Dapper;
 
 namespace confin.data.Repositories
 {
-    public class ContaRepository : IContaRepository
+    public class CadastroContaRepository : ICadastroContaRepository
     {
         private readonly DbSession _session;
 
-        public ContaRepository(DbSession session)
+        public CadastroContaRepository(DbSession session)
         {
             _session = session;
         }
