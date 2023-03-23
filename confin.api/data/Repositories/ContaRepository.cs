@@ -20,34 +20,39 @@ namespace confin.data.Repositories
                                           ,descricao
                                           ,variabilidade
                                           ,observacoes
-                                          ,vencimento 
-                                          FROM conta";
+                                          ,vencimento
+                                          ,ativa
+                                          FROM CadastroConta";
 
             var result = await _session.Connection.QueryAsync<CadastroConta>(query, null, _session.Transaction);
 
             return result;
         }
 
-        public async Task Save(CadastroConta conta)
+        public async Task Save(CadastroConta cadastroConta)
         {
-            string query = $@"INSERT INTO conta(
+            string query = $@"INSERT INTO CadastroConta(
                                 descricao
                                 ,variabilidade
                                 ,observacoes
-                                ,vencimento) 
+                                ,vencimento
+                                ,dataCadastro
+                                ,ativa) 
                             VALUES(
                                 @Descricao,
-                                @Valor,
                                 @Variabilidade,
                                 @Observacoes,
-                                @Status,
-                                @Vencimento)";
+                                @Vencimento
+                                ,@DataCadastro
+                                ,@Ativa)";
 
             DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("Descricao", conta.Descricao, DbType.String);
-            parameters.Add("Variabilidade", conta.Variabilidade, DbType.Int16);
-            parameters.Add("Observacoes", conta.Observacoes, DbType.String);
-            parameters.Add("Vencimento", conta.Vencimento, DbType.DateTime);
+            parameters.Add("Descricao", cadastroConta.Descricao, DbType.String);
+            parameters.Add("Variabilidade", cadastroConta.Variabilidade, DbType.Int16);
+            parameters.Add("Observacoes", cadastroConta.Observacoes, DbType.String);
+            parameters.Add("Vencimento", cadastroConta.Vencimento, DbType.DateTime);
+            parameters.Add("DataCadastro", cadastroConta.DataCadastro, DbType.DateTime);
+            parameters.Add("Ativa", cadastroConta.Ativa, DbType.Boolean);
 
             await _session.Connection.ExecuteAsync(query, parameters);
         }
