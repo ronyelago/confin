@@ -1,0 +1,17 @@
+CREATE TABLE CadastroConta (
+  id SERIAL PRIMARY KEY,
+  descricao VARCHAR(50) NOT NULL,
+  variabilidade SMALLINT NOT NULL,
+  observacoes VARCHAR(50),
+  vencimento TIMESTAMP NOT NULL,
+  ativa BOOLEAN NOT NULL,
+  dataCadastro TIMESTAMP NOT NULL
+);
+
+CREATE TABLE Conta (
+  id SERIAL PRIMARY KEY,
+  cadastroContaId INT REFERENCES CadastroConta(id),
+  valor NUMERIC(10,2) NOT NULL,
+  status SMALLINT NOT NULL,
+  dataReferencia TIMESTAMP NOT NULL
+);
