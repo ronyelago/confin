@@ -8,7 +8,7 @@ namespace confin.api.mappings
     {
         public ContaProfile()
         {
-            CreateMap<Conta, NovaContaModel>().ReverseMap();
+            CreateMap<Conta, NovoCadastroContaModel>().ReverseMap();
         }
     }
 }
