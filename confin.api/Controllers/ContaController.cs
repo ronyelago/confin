@@ -27,7 +27,7 @@ namespace confin.Controllers
             return Ok(compras);
         }
 
-        [HttpPost("NovaConta")]
+        [HttpPost("NovoCadastroConta")]
         public async Task<IActionResult> Post([FromBody] NovoCadastroContaModel contaModel)
         {
             await _contaRepository.Save(_mapper.Map<CadastroConta>(contaModel));
