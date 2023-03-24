@@ -18,7 +18,7 @@ namespace confin.Controllers
             _contaRepository = contaRepository;
         }
 
-        [HttpGet("ObterTodasContas")]
+        [HttpGet("ObterTodosCadastrosContas")]
         public async Task<IActionResult> Get()
         {
             Log.Information("=> Obtendo todas as contas..");
