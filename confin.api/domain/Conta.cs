@@ -6,6 +6,7 @@ namespace confin.domain
         public CadastroConta CadastroConta { get; set; }
         public decimal Valor { get; set; }
         public StatusConta Status { get; set; }
+        public DateTime Vencimento { get; set; }
     }
 
     public enum StatusConta
