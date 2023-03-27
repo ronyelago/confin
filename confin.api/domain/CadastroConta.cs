@@ -5,11 +5,12 @@
         public int Id { get; set; }
         public string Descricao { get; set; }
         public Variabilidade Variabilidade { get; set; }
+        public bool Ativa { get; set; }
+        public Ciclo Ciclo { get; set; }
         public string Observacoes { get; set; }
         public DateTime Vencimento { get; set; }
         public DateTime DataCadastro { get; set; }
-        public bool Ativa { get; set; }
-        public Ciclo Ciclo { get; set; }
+        public DateTime DataExpiracao { get; set; }
         public List<Conta> ContasPagar { get; set; }
     }
 
