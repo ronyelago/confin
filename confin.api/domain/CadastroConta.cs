@@ -17,4 +17,13 @@
     {
         Mensal = 0
     }
+
+    public enum Variabilidade
+    {
+        Invariavel = 0,
+        Baixa = 1,
+        Media = 2,
+        Alta = 3,
+        Altissima = 4
+    }
 }
