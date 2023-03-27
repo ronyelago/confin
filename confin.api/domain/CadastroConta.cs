@@ -1,13 +1,18 @@
 ﻿namespace confin.domain
 {
     public class CadastroConta
-    {
+    {   
+        public CadastroConta()
+        {
+            ContasPagar = new List<Conta>();
+        }
+
         public int Id { get; set; }
-        public string Descricao { get; set; }
+        public string? Descricao { get; set; }
         public Variabilidade Variabilidade { get; set; }
         public bool Ativa { get; set; }
         public Ciclo Ciclo { get; set; }
-        public string Observacoes { get; set; }
+        public string? Observacoes { get; set; }
         public DateTime Vencimento { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime DataExpiracao { get; set; }
