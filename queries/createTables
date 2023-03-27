@@ -5,8 +5,8 @@ CREATE TABLE CadastroConta (
   ciclo SMALLINT NOT NULL,
   ativa BOOLEAN NOT NULL,
   observacoes VARCHAR(50),
-  vencimento TIMESTAMP NOT NULL,
-  dataCadastro TIMESTAMP NOT NULL
+  dataCadastro TIMESTAMP NOT NULL,
+  dataExpiracao TIMESTAMP NULL
 );
 
 CREATE TABLE Conta (
@@ -14,5 +14,5 @@ CREATE TABLE Conta (
   cadastroContaId INT REFERENCES CadastroConta(id),
   valor NUMERIC(10,2) NOT NULL,
   status SMALLINT NOT NULL,
-  dataReferencia TIMESTAMP NOT NULL
+  vencimento TIMESTAMP NOT NULL,
 );
