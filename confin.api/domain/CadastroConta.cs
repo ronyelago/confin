@@ -16,7 +16,8 @@
 
     public enum Ciclo
     {
-        Mensal = 0
+        Mensal = 0,
+        Anual = 1
     }
 
     public enum Variabilidade
