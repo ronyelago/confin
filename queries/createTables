@@ -2,6 +2,7 @@ CREATE TABLE CadastroConta (
   id SERIAL PRIMARY KEY,
   descricao VARCHAR(50) NOT NULL,
   variabilidade SMALLINT NOT NULL,
+  vencimento TIMESTAMP NOT NULL,
   ciclo SMALLINT NOT NULL,
   ativa BOOLEAN NOT NULL,
   observacoes VARCHAR(50),
@@ -14,5 +15,4 @@ CREATE TABLE Conta (
   cadastroContaId INT REFERENCES CadastroConta(id),
   valor NUMERIC(10,2) NOT NULL,
   status SMALLINT NOT NULL,
-  vencimento TIMESTAMP NOT NULL,
 );
