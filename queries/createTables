@@ -16,3 +16,5 @@ CREATE TABLE Conta (
   valor NUMERIC(10,2) NOT NULL,
   status SMALLINT NOT NULL,
 );
+
+//transformar ciclo em entidade associada a conta?
