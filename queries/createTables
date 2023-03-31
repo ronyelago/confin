@@ -16,4 +16,4 @@ CREATE TABLE Conta (
   valor NUMERIC(10,2) NOT NULL,
   status SMALLINT NOT NULL,
 );
-//toma isso na sua peita
+//toma isso no seu barrigote
