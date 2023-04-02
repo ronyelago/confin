@@ -1,0 +1,4 @@
+Escopo inicial:
+	
+	Criar um sistema que ajude a gerenciar minhas financas, 
+gerando planejamentos de ciclo mensal e anual de contas a pagar.
