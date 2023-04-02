@@ -2,3 +2,6 @@ Escopo inicial:
 	
 	Criar um sistema que ajude a gerenciar minhas financas, 
 gerando planejamentos de ciclo mensal e anual de contas a pagar.
+
+	=> Devera haver uma interface onde sera possivel visualizar as contas a pagar de 
+		um ciclo que sera mensal e/ou anual
