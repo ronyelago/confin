@@ -11,3 +11,5 @@ gerando planejamentos de ciclo mensal e anual de contas a pagar.
     => Uma Conta a Pagar tera os seguintes status: Pendente, Paga, Atrasada e Paga Atrasada
 
     => Devara haver uma interface onde sera possivel cadastrar uma nova Conta
+
+    => Devara haver uma interface onde sera possivel editar uma Conta
