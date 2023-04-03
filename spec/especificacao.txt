@@ -13,3 +13,7 @@ gerando planejamentos de ciclo mensal e anual de contas a pagar.
     => Devara haver uma interface onde sera possivel cadastrar uma nova Conta
 
     => Devara haver uma interface onde sera possivel editar uma Conta
+
+    => Devera gerar automaticamente o planejamento financeiro mensal, 
+	a partir das contas cadastradas e compras efetuadas;
+		
