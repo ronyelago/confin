@@ -1,7 +1,9 @@
 Escopo inicial:
 	
-	Criar um sistema que ajude a gerenciar minhas financas, 
-gerando planejamentos de ciclo mensal e anual de contas a pagar.
+	Contas a Pagar
+    
+    Criar um sistema que ajude a gerenciar minhas financas, 
+    gerando planejamentos de ciclo mensal e anual de contas a pagar.
 
 	=> Devera haver uma interface onde sera possivel visualizar as contas a pagar de 
 		um ciclo que sera mensal e/ou anual
@@ -17,3 +19,4 @@ gerando planejamentos de ciclo mensal e anual de contas a pagar.
     => Devera gerar automaticamente o planejamento financeiro mensal, 
 	a partir das contas cadastradas e compras efetuadas;
 		
+    
