@@ -20,5 +20,7 @@ Escopo inicial:
 	a partir das contas cadastradas e compras efetuadas;
 
     Compras
+
+    => Devara haver uma interface onde sera possivel registrar uma nova Compra
 		
     
