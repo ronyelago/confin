@@ -18,5 +18,7 @@ Escopo inicial:
 
     => Devera gerar automaticamente o planejamento financeiro mensal, 
 	a partir das contas cadastradas e compras efetuadas;
+
+    Compras
 		
     
