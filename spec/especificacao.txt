@@ -21,6 +21,8 @@ Escopo inicial:
 
     Compras
 
+    A feature de Compras devera se integrar a feature de Contas a Pagar
+
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
 		
     
