@@ -24,5 +24,7 @@ Escopo inicial:
     A feature de Compras devera se integrar a feature de Contas a Pagar
 
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
+
+    => A interface de registro de nova Compra devera conter os seguintes campos:
 		
     
