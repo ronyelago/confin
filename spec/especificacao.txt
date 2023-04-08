@@ -26,5 +26,6 @@ Escopo inicial:
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
 
     => A interface de registro de nova Compra devera conter os seguintes campos:
+        Descricao, Tipo de Compra, 
 		
     
