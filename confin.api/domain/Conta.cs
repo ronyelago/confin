@@ -1,17 +1,36 @@
-namespace confin.domain
+﻿namespace confin.domain
 {
     public class Conta
-    {
+    {   
+        public Conta()
+        {
+            ContasPagar = new List<Conta>();
+        }
+
         public int Id { get; set; }
-        public CadastroConta CadastroConta { get; set; }
-        public decimal Valor { get; set; }
-        public StatusConta Status { get; set; }
+        public string? Descricao { get; set; }
+        public Variabilidade Variabilidade { get; set; }
+        public bool Ativa { get; set; }
+        public Ciclo Ciclo { get; set; }
+        public string? Observacoes { get; set; }
+        public DateTime Vencimento { get; set; }
+        public DateTime DataCadastro { get; set; }
+        public DateTime DataExpiracao { get; set; }
+        public List<Conta> ContasPagar { get; set; }
     }
 
-    public enum StatusConta
+    public enum Ciclo
     {
-        Pendente = 0,
-        Paga = 1,
-        Atrasada = 2
+        Mensal = 1,
+        Anual = 2
+    }
+
+    public enum Variabilidade
+    {
+        Invariavel = 0,
+        Baixa = 1,
+        Media = 2,
+        Alta = 3,
+        Altissima = 4
     }
 }

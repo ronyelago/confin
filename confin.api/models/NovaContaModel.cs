@@ -2,7 +2,7 @@ using confin.domain;
 
 namespace confin.api.models
 {
-    public class NovoCadastroContaModel
+    public class NovaContaModel
     {
         public string? Descricao { get; set; }
         public Variabilidade Variabilidade { get; set; }
