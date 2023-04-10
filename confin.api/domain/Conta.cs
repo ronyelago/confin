@@ -4,7 +4,7 @@
     {   
         public Conta()
         {
-            ContasPagar = new List<Conta>();
+            ContasPagar = new List<ContaPagar>();
         }
 
         public int Id { get; set; }
