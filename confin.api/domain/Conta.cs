@@ -16,7 +16,7 @@
         public DateTime Vencimento { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime DataExpiracao { get; set; }
-        public List<Conta> ContasPagar { get; set; }
+        public List<ContaPagar> ContasPagar { get; set; }
     }
 
     public enum Ciclo
