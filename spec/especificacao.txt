@@ -2,7 +2,7 @@ Escopo inicial:
 	
 	Contas a Pagar
     
-    Criar um sistema que ajude a gerenciar minhas financas, 
+    Criar um sistema que ajude a gerenciar financas pessoais, 
     gerando planejamentos de ciclo mensal e anual de contas a pagar.
 
 	=> Devera haver uma interface onde sera possivel visualizar as contas a pagar de 
@@ -21,11 +21,13 @@ Escopo inicial:
 
     Compras
 
-    A feature de Compras devera se integrar a feature de Contas a Pagar
+    A funcionalidade de Compras devera se integrar a funcionalidade de Contas a Pagar
 
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
 
     => A interface de registro de nova Compra devera conter os seguintes campos:
         Descricao, Valor, Tipo de Compra, Data da Compra
+        - as opcoes para selecionar o Tipo de Compra serao: debito, credito a vista, credito parcelado,
+        pix e dinheiro (vivo). 
 		
     
