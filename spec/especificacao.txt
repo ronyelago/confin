@@ -1,5 +1,9 @@
 Escopo inicial:
 	
+    Conta
+
+    => 
+
 	Contas a Pagar
     
     Criar um sistema que ajude a gerenciar financas pessoais, 
@@ -8,8 +12,8 @@ Escopo inicial:
 	=> Devera haver uma interface onde sera possivel visualizar as contas a pagar de 
 		um ciclo que sera mensal e/ou anual
 
-    => A interface devera ter um botao onde o usuario podera modificar o status de uma conta a pagar
-
+    => A interface devera possibilitar a edicao de uma conta onde o usuario podera modificar 
+    
     => Uma Conta a Pagar tera os seguintes status: Pendente, Paga, Atrasada e Paga Atrasada
 
     => Devara haver uma interface onde sera possivel cadastrar uma nova Conta
