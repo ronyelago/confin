@@ -7,7 +7,7 @@ Escopo inicial:
 
     => 
 
-	Contas a Pagar
+	Conta a Pagar
     
     Criar um sistema que ajude a gerenciar financas pessoais, 
     gerando planejamentos de ciclo mensal e anual de contas a pagar.
