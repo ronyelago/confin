@@ -2,6 +2,9 @@ Escopo inicial:
 	
     Conta
 
+    => Definicao:
+        A Conta e a entidade a partir da qual o Planejamento Finceiro e gerado mensalmente  
+
     => 
 
 	Contas a Pagar
@@ -25,10 +28,11 @@ Escopo inicial:
 
     Compras
 
-    Inicialmente, o registro de novas compras devera ser feito pelo usuario, que manualmente
-    alimentara, se possivel e necessario diariamente todas as compras efetuadas, garantindo assim
-    a atualizacao constante das inforcoes financeiras. 
-    A funcionalidade de Compras devera se integrar a funcionalidade de Contas a Pagar
+    => Definicao:
+        Inicialmente, o registro de novas compras devera ser feito pelo usuario, que manualmente
+        alimentara, se possivel e necessario diariamente todas as compras efetuadas, garantindo assim
+        a atualizacao constante das inforcoes financeiras. 
+        A funcionalidade de Compras devera se integrar a funcionalidade de Contas a Pagar
 
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
 
