@@ -30,8 +30,8 @@ Escopo inicial:
 
     => Definicao:
         Inicialmente, o registro de novas compras devera ser feito pelo usuario, que manualmente
-        alimentara, se possivel e necessario diariamente todas as compras efetuadas, garantindo assim
-        a atualizacao constante das inforcoes financeiras. 
+        alimentara, se possivel e necessario, diariamente todas as compras efetuadas, garantindo assim
+        a atualizacao constante das informacoes financeiras. 
         A funcionalidade de Compras devera se integrar a funcionalidade de Contas a Pagar
 
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
