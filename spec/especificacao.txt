@@ -25,6 +25,9 @@ Escopo inicial:
 
     Compras
 
+    Inicialmente, o registro de novas compras devera ser feito pelo usuario, que manualmente
+    alimentara, se possivel e necessario diariamente todas as compras efetuadas, garantindo assim
+    a atualizacao constante das inforcoes financeiras. 
     A funcionalidade de Compras devera se integrar a funcionalidade de Contas a Pagar
 
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
@@ -32,6 +35,6 @@ Escopo inicial:
     => A interface de registro de nova Compra devera conter os seguintes campos:
         Descricao, Valor, Tipo de Compra, Data da Compra
         - as opcoes para selecionar o Tipo de Compra serao: debito, credito a vista, credito parcelado,
-        pix e dinheiro (vivo). 
+        pix e dinheiro (vivo).    
 		
     
