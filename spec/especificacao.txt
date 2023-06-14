@@ -13,7 +13,7 @@ Escopo inicial:
 	Conta a Pagar
 
 	=> Devera haver uma interface onde sera possivel visualizar as contas a pagar de 
-		um ciclo que sera mensal e/ou anual
+		um ciclo que sera mensal (posteriormente sera implementado tambem ciclos mensais)
 
     => A interface devera possibilitar a edicao de uma conta onde o usuario podera modificar 
     
@@ -39,6 +39,6 @@ Escopo inicial:
     => A interface de registro de nova Compra devera conter os seguintes campos:
         Descricao, Valor, Tipo de Compra, Data da Compra
         - as opcoes para selecionar o Tipo de Compra serao: debito, credito a vista, credito parcelado,
-        pix e dinheiro (vivo).    
+        pix e dinheiro (vivo).     
 		
     
