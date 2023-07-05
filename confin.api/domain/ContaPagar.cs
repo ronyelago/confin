@@ -3,8 +3,10 @@ namespace confin.domain
     public class ContaPagar
     {
         public int Id { get; set; }
+        public int CadastroContaId { get; set; }
         public Conta CadastroConta { get; set; }
         public decimal Valor { get; set; }
+        public DateTime DataVencimento { get; set; }
         public StatusConta Status { get; set; }
     }
 

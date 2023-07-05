@@ -20,7 +20,7 @@ namespace confin.data.Repositories
                                           ,descricao
                                           ,variabilidade
                                           ,observacoes
-                                          ,vencimento
+                                          ,diavencimento
                                           ,ativa
                                           FROM CadastroConta";
 
@@ -35,14 +35,14 @@ namespace confin.data.Repositories
                                 descricao
                                 ,variabilidade
                                 ,observacoes
-                                ,vencimento
+                                ,diavencimento
                                 ,dataCadastro
                                 ,ativa) 
                             VALUES(
                                 @Descricao,
                                 @Variabilidade,
                                 @Observacoes,
-                                @Vencimento
+                                @DiaVencimento
                                 ,@DataCadastro
                                 ,@Ativa)";
 
@@ -50,7 +50,7 @@ namespace confin.data.Repositories
             parameters.Add("Descricao", cadastroConta.Descricao, DbType.String);
             parameters.Add("Variabilidade", cadastroConta.Variabilidade, DbType.Int16);
             parameters.Add("Observacoes", cadastroConta.Observacoes, DbType.String);
-            parameters.Add("Vencimento", cadastroConta.Vencimento, DbType.DateTime);
+            parameters.Add("DiaVencimento", cadastroConta.DiaVencimento, DbType.DateTime);
             parameters.Add("DataCadastro", cadastroConta.DataCadastro, DbType.DateTime);
             parameters.Add("Ativa", cadastroConta.Ativa, DbType.Boolean);
 
