@@ -22,7 +22,7 @@ namespace confin.data.Repositories
                                           ,observacoes
                                           ,diavencimento
                                           ,ativa
-                                          FROM CadastroConta";
+                                          FROM Conta";
 
             var result = await _session.Connection.QueryAsync<Conta>(query, null, _session.Transaction);
 
@@ -31,7 +31,7 @@ namespace confin.data.Repositories
 
         public async Task Save(Conta cadastroConta)
         {
-            string query = $@"INSERT INTO CadastroConta(
+            string query = $@"INSERT INTO Conta(
                                 descricao
                                 ,variabilidade
                                 ,observacoes
