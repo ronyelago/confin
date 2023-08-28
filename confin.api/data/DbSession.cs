@@ -17,7 +17,6 @@ namespace confin.data
             _id = Guid.NewGuid();
             _configuration = configuration;
             Connection = new NpgsqlConnection(_configuration.GetConnectionString("Finacon"));
-            // _connection.Open();
         }
 
         public async Task<T> GetAsync<T>(string command, object parms)
