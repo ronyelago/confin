@@ -10,8 +10,8 @@ Escopo inicial:
         Uma Conta tera os seguintes campos:
             -Id
             -Descricao
-            -ValorMedio (sera definido no momento do criacao de uma conta e posteriormente atualizado mensalmente 
-                com base no valor das ContasPagar relacionadas)
+            -ValorMedio (sera definido no momento de criacao de uma conta e posteriormente atualizado mensalmente 
+                por um job, com base no valor das ultimas ContasPagar relacionadas)
             -Variabilidade - este campo define o quanto o valor de uma Conta podera variar a cada novo ciclo/mes
     => 
 
