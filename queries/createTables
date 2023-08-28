@@ -1,19 +1,18 @@
-CREATE TABLE CadastroConta (
-  id SERIAL PRIMARY KEY,
-  descricao VARCHAR(50) NOT NULL,
-  variabilidade SMALLINT NOT NULL,
-  vencimento TIMESTAMP NOT NULL,
-  ciclo SMALLINT NOT NULL,
-  ativa BOOLEAN NOT NULL,
-  observacoes VARCHAR(50),
-  dataCadastro TIMESTAMP NOT NULL,
-  dataExpiracao TIMESTAMP NULL
+CREATE TABLE IF NOT EXISTS Conta (
+    Id SERIAL PRIMARY KEY,
+    Descricao VARCHAR(64),
+    Variabilidade INTEGER,
+    Ativa BOOLEAN,
+    Observacoes TEXT NULLABLE,
+    DiaVencimento INTEGER,
+    DataCadastro TIMESTAMP,
+    DataExpiracao TIMESTAMP NULLABLE
 );
 
-CREATE TABLE Conta (
-  id SERIAL PRIMARY KEY,
-  cadastroContaId INT REFERENCES CadastroConta(id),
-  valor NUMERIC(10,2) NOT NULL,
-  status SMALLINT NOT NULL,
+CREATE TABLE IF NOT EXISTS ContaPagar (
+    Id SERIAL PRIMARY KEY,
+    CadastroContaId INTEGER REFERENCES Conta(Id),
+    Valor DECIMAL,
+    DataVencimento TIMESTAMP,
+    Status INTEGER
 );
-//toma isso na sua peita, ozado

@@ -1,7 +1,7 @@
-﻿using Dapper;
-using confin.domain;
+﻿using confin.domain;
 using System.Data;
 using confin.api.interfaces.repositories;
+using Dapper;
 
 namespace confin.data.Repositories
 {

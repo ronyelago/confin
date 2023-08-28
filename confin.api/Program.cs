@@ -29,7 +29,6 @@ internal class Program
         builder.Services.AddCors();
 
         builder.Services.AddScoped<DbSession>();
-        builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
         builder.Services.AddTransient<ICompraRepository, CompraRepository>();
         builder.Services.AddTransient<ICadastroContaRepository, CadastroContaRepository>();
 

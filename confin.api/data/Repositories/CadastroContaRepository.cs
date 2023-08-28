@@ -7,11 +7,11 @@ namespace confin.data.Repositories
 {
     public class CadastroContaRepository : ICadastroContaRepository
     {
-        private readonly DbSession _session;
+        private readonly DbSession dbSession;
 
-        public CadastroContaRepository(DbSession session)
+        public CadastroContaRepository(DbSession dbSession)
         {
-            _session = session;
+            this.dbSession = dbSession;
         }
 
         public async Task<IEnumerable<Conta>> Get()
@@ -24,7 +24,7 @@ namespace confin.data.Repositories
                                           ,ativa
                                           FROM Conta";
 
-            var result = await _session.Connection.QueryAsync<Conta>(query, null, _session.Transaction);
+            var result = await dbSession.Connection.QueryAsync<Conta>(query, null, dbSession.Transaction);
 
             return result;
         }
@@ -46,7 +46,7 @@ namespace confin.data.Repositories
                                 ,@DataCadastro
                                 ,@Ativa)";
 
-            DynamicParameters parameters = new DynamicParameters();
+            DynamicParameters parameters = new();
             parameters.Add("Descricao", cadastroConta.Descricao, DbType.String);
             parameters.Add("Variabilidade", cadastroConta.Variabilidade, DbType.Int16);
             parameters.Add("Observacoes", cadastroConta.Observacoes, DbType.String);
@@ -54,7 +54,7 @@ namespace confin.data.Repositories
             parameters.Add("DataCadastro", cadastroConta.DataCadastro, DbType.DateTime);
             parameters.Add("Ativa", cadastroConta.Ativa, DbType.Boolean);
 
-            await _session.Connection.ExecuteAsync(query, parameters);
+            await dbSession.Connection.ExecuteAsync(query, parameters);
         }
     }
 }

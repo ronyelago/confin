@@ -7,7 +7,12 @@ Escopo inicial:
 
     => Definicao:
         A Conta e a entidade a partir da qual o Planejamento Finceiro e gerado mensalmente  
-
+        Uma Conta tera os seguintes campos:
+            -Id
+            -Descricao
+            -ValorMedio (sera definido no momento do criacao de uma conta e posteriormente atualizado mensalmente 
+                com base no valor das ContasPagar relacionadas)
+            -Variabilidade - este campo define o quanto o valor de uma Conta podera variar a cada novo ciclo/mes
     => 
 
 	Conta a Pagar
@@ -39,6 +44,6 @@ Escopo inicial:
     => A interface de registro de nova Compra devera conter os seguintes campos:
         Descricao, Valor, Tipo de Compra, Data da Compra
         - as opcoes para selecionar o Tipo de Compra serao: debito, credito a vista, credito parcelado,
-        pix e dinheiro (vivo).     
+        pix e dinheiro a vista.     
 		
     

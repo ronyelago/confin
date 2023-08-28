@@ -9,6 +9,8 @@
 
         public int Id { get; set; }
         public string? Descricao { get; set; }
+        // TODO - incluir o novo campo abaixno na tabela
+        public decimal ValorMedio {get; set; }
         public Variabilidade Variabilidade { get; set; }
         public bool Ativa { get; set; }
         public string? Observacoes { get; set; }
