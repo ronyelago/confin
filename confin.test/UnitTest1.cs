@@ -10,13 +10,13 @@ namespace confin.test;
 
 public class CadastroContaRepositoryTests
 {
-    private readonly Mock<IDbService> _mockService;
-    private readonly CadastroContaRepository _repository;
+    private readonly Mock<DbSession> _mockSession;
+    private readonly ContaRepository _repository;
 
     public CadastroContaRepositoryTests()
     {
-        _mockService = new Mock<IDbService>();
-        _repository = new CadastroContaRepository(_mockService.Object);
+        _mockSession = new Mock<DbSession>();
+        _repository = new ContaRepository(_mockSession.Object);
     }
 
     [Fact]

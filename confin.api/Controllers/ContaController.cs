@@ -10,9 +10,9 @@ namespace confin.Controllers
     public class ContaController : ControllerBase
     {
         private IMapper _mapper;
-        private readonly ICadastroContaRepository _contaRepository;
+        private readonly IContaRepository _contaRepository;
 
-        public ContaController(IMapper mapper, ICadastroContaRepository contaRepository)
+        public ContaController(IMapper mapper, IContaRepository contaRepository)
         {
             _mapper = mapper;
             _contaRepository = contaRepository;

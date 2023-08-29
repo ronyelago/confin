@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS Conta (
     Id SERIAL PRIMARY KEY,
     Descricao VARCHAR(64),
+    ValorMedio MONEY,
     Variabilidade INTEGER,
     Ativa BOOLEAN,
     Observacoes TEXT NULLABLE,
@@ -14,5 +15,6 @@ CREATE TABLE IF NOT EXISTS ContaPagar (
     CadastroContaId INTEGER REFERENCES Conta(Id),
     Valor DECIMAL,
     DataVencimento TIMESTAMP,
+    DataPagamento TIMESTAMP,
     Status INTEGER
 );

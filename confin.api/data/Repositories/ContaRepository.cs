@@ -5,11 +5,11 @@ using Dapper;
 
 namespace confin.data.Repositories
 {
-    public class CadastroContaRepository : ICadastroContaRepository
+    public class ContaRepository : IContaRepository
     {
         private readonly DbSession dbSession;
 
-        public CadastroContaRepository(DbSession dbSession)
+        public ContaRepository(DbSession dbSession)
         {
             this.dbSession = dbSession;
         }
@@ -19,21 +19,23 @@ namespace confin.data.Repositories
             const string query = @"SELECT id
                                           ,descricao
                                           ,variabilidade
+                                          ,valorMedio
                                           ,observacoes
                                           ,diavencimento
                                           ,ativa
                                           FROM Conta";
 
-            var result = await dbSession.Connection.QueryAsync<Conta>(query, null, dbSession.Transaction);
+            var contas = await dbSession.Connection.QueryAsync<Conta>(query, null, dbSession.Transaction);
 
-            return result;
+            return contas;
         }
 
-        public async Task Save(Conta cadastroConta)
+        public async Task Save(Conta conta)
         {
             string query = $@"INSERT INTO Conta(
                                 descricao
                                 ,variabilidade
+                                ,valorMedio
                                 ,observacoes
                                 ,diavencimento
                                 ,dataCadastro
@@ -41,18 +43,20 @@ namespace confin.data.Repositories
                             VALUES(
                                 @Descricao,
                                 @Variabilidade,
+                                @ValorMedio,
                                 @Observacoes,
                                 @DiaVencimento
                                 ,@DataCadastro
                                 ,@Ativa)";
 
             DynamicParameters parameters = new();
-            parameters.Add("Descricao", cadastroConta.Descricao, DbType.String);
-            parameters.Add("Variabilidade", cadastroConta.Variabilidade, DbType.Int16);
-            parameters.Add("Observacoes", cadastroConta.Observacoes, DbType.String);
-            parameters.Add("DiaVencimento", cadastroConta.DiaVencimento, DbType.DateTime);
-            parameters.Add("DataCadastro", cadastroConta.DataCadastro, DbType.DateTime);
-            parameters.Add("Ativa", cadastroConta.Ativa, DbType.Boolean);
+            parameters.Add("Descricao", conta.Descricao, DbType.String);
+            parameters.Add("Variabilidade", conta.Variabilidade, DbType.Int16);
+            parameters.Add("ValorMedio", conta.ValorMedio, DbType.Decimal);
+            parameters.Add("Observacoes", conta.Observacoes, DbType.String);
+            parameters.Add("DiaVencimento", conta.DiaVencimento, DbType.DateTime);
+            parameters.Add("DataCadastro", conta.DataCadastro, DbType.DateTime);
+            parameters.Add("Ativa", conta.Ativa, DbType.Boolean);
 
             await dbSession.Connection.ExecuteAsync(query, parameters);
         }

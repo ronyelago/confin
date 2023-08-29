@@ -30,7 +30,7 @@ internal class Program
 
         builder.Services.AddScoped<DbSession>();
         builder.Services.AddTransient<ICompraRepository, CompraRepository>();
-        builder.Services.AddTransient<ICadastroContaRepository, CadastroContaRepository>();
+        builder.Services.AddTransient<IContaRepository, ContaRepository>();
 
         builder.Services.AddFluentValidationAutoValidation();
         builder.Services.AddValidatorsFromAssemblyContaining<NovaCompraValidator>();
