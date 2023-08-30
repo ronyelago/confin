@@ -18,19 +18,19 @@ namespace confin.Controllers
             _contaRepository = contaRepository;
         }
 
-        [HttpGet("ObterTodosCadastrosContas")]
+        [HttpGet("ObterTodasContas")]
         public async Task<IActionResult> Get()
         {
             Log.Information("=> Obtendo todas as contas..");
-            var compras = await _contaRepository.Get();
+            var compras = await _contaRepository.GetAllAsync();
 
             return Ok(compras);
         }
 
-        [HttpPost("NovoCadastroConta")]
+        [HttpPost("NovaConta")]
         public async Task<IActionResult> Post([FromBody] NovaContaModel contaModel)
         {
-            await _contaRepository.Save(_mapper.Map<Conta>(contaModel));
+            await _contaRepository.AddAsync(_mapper.Map<Conta>(contaModel));
 
             return Created("", contaModel);
         }

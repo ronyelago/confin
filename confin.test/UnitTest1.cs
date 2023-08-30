@@ -32,7 +32,7 @@ public class CadastroContaRepositoryTests
 
 
         // Act
-        var result = await _repository.Get();
+        var result = await _repository.GetAllAsync();
 
         // Assert
         Assert.Equal(mockResult, result);

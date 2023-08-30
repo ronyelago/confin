@@ -14,7 +14,7 @@ namespace confin.data.Repositories
             this.dbSession = dbSession;
         }
 
-        public async Task<IEnumerable<Conta>> Get()
+        public async Task<IReadOnlyList<Conta>> GetAllAsync()
         {
             const string query = @"SELECT id
                                           ,descricao
@@ -27,10 +27,10 @@ namespace confin.data.Repositories
 
             var contas = await dbSession.Connection.QueryAsync<Conta>(query, null, dbSession.Transaction);
 
-            return contas;
+            return contas.ToList();
         }
 
-        public async Task Save(Conta conta)
+        public async Task<string> AddAsync(Conta conta)
         {
             string query = $@"INSERT INTO Conta(
                                 descricao
@@ -58,7 +58,9 @@ namespace confin.data.Repositories
             parameters.Add("DataCadastro", conta.DataCadastro, DbType.DateTime);
             parameters.Add("Ativa", conta.Ativa, DbType.Boolean);
 
-            await dbSession.Connection.ExecuteAsync(query, parameters);
+            var result = await dbSession.Connection.ExecuteAsync(query, parameters);
+
+            return result.ToString();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace confin.Controllers
         public async Task<IActionResult> Get()
         {
             Log.Information("=> Obtendo todas as compras...");
-            var compras = await _compraRepository.Get();
+            var compras = await _compraRepository.GetAllAsync();
 
             return Ok(compras);
         }
@@ -36,7 +36,7 @@ namespace confin.Controllers
         [HttpPost("NovaCompra")]
         public async Task<IActionResult> Post([FromBody] NovaCompraModel compraModel)
         {
-            await _compraRepository.Save(_mapper.Map<Compra>(compraModel));
+            await _compraRepository.AddAsync(_mapper.Map<Compra>(compraModel));
 
             return Created("", compraModel);
         }

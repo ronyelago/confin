@@ -2,9 +2,8 @@
 
 namespace confin.api.interfaces.repositories
 {
-    public interface ICompraRepository
+    public interface ICompraRepository : IRepositoryBase<Compra>
     {
-        public Task<IEnumerable<Compra>> Get();
-        public Task Save(Compra compra);
+        
     }
 }

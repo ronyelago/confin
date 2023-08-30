@@ -14,16 +14,16 @@ namespace confin.data.Repositories
             _session = session;
         }
 
-        public async Task<IEnumerable<Compra>> Get()
+        public async Task<IReadOnlyList<Compra>> GetAllAsync()
         {
             const string query = @"SELECT id, descricao, valor, formaPagamento, parcelada, dataCompra FROM compra";
 
             var result = await _session.Connection.QueryAsync<Compra>(query, null, _session.Transaction);
 
-            return result;
+            return result.ToList();
         }
 
-        public async Task Save(Compra compra)
+        public async Task<string> AddAsync(Compra compra)
         {
             string query = $@"INSERT INTO compra(
                                   descricao, valor, formaPagamento, parcelada, dataCompra) 
@@ -40,7 +40,9 @@ namespace confin.data.Repositories
             parameters.Add("FormaPagamento", compra.FormaPagamento, DbType.Int16);
             parameters.Add("Parcelada", compra.Parcelada, DbType.Boolean);
 
-            await _session.Connection.ExecuteAsync(query, parameters);
+            var result = await _session.Connection.ExecuteAsync(query, parameters);
+
+            return result.ToString();
         }
     }
 }
