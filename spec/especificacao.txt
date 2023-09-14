@@ -6,13 +6,14 @@ Escopo inicial:
 	
     Planejamento Financeiro
 
-    Criar um sistema que gere automaticamente a cada ciclo mensal
+    Criar uma funcionalidade que gere automaticamente a cada ciclo mensal
     uma planilha de contas a pagar, exibindo valores, data de vencimento, status,
     assim como notificacoes e alertas de vencimento de faturas.
 
     Controle de Gastos
 
-
+    Criar uma funcionalidade que possibilite inserir compras avulsas, detalhando dados como
+    valor, data e fonte pagadora.
 
     Conta
 
