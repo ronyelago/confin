@@ -3,24 +3,33 @@ Escopo inicial:
     Criar um sistema que ajude a gerenciar financas pessoais, 
     gerando planejamentos de ciclo mensal de contas a pagar.
 	
+    Planejamento Financeiro
+
+    Criar um sistema que gere automaticamente a cada ciclo mensal
+    uma planilha de contas a pagar, exibindo valores, data de vencimento, status,
+    assim como notificacoes e alertas de vencimento de faturas.
+
+    Controle de Gastos
+
+
+
     Conta
 
     => Definicao:
-        A Conta e a entidade a partir da qual o Planejamento Finceiro e gerado mensalmente  
-        Uma Conta tera os seguintes campos:
+        A Conta eh a entidade a partir da qual o Planejamento Finceiro eh gerado mensalmente  
+        Uma Conta terah os seguintes campos:
             -Id
             -Descricao
-            -ValorMedio (sera definido no momento de criacao de uma conta e posteriormente atualizado mensalmente 
-                por um job, com base no valor das ultimas ContasPagar relacionadas)
+            -ValorMedio: eh um campo runtime field, gerado a partir da mehdia movel 
             -Variabilidade - este campo define o quanto o valor de uma Conta podera variar a cada novo ciclo/mes
     => 
 
 	Conta a Pagar
 
-	=> Devera haver uma interface onde sera possivel visualizar as contas a pagar de 
-		um ciclo que sera mensal (posteriormente sera implementado tambem ciclos mensais)
+	=> Deverah haver uma interface onde serah possivel visualizar as contas a pagar de 
+		um ciclo mensal (posteriormente sera implementado tambem ciclos anuais)
 
-    => A interface devera possibilitar a edicao de uma conta onde o usuario podera modificar 
+    => A interface deverah possibilitar a edicao de uma conta onde o usuario podera modificar 
     
     => Uma Conta a Pagar tera os seguintes status: Pendente, Paga, Atrasada e Paga Atrasada
 
