@@ -13,7 +13,7 @@ Escopo inicial:
     Controle de Gastos
 
     Criar uma funcionalidade que possibilite inserir compras avulsas, detalhando dados como
-    valor, data e fonte pagadora.
+    valor, data e fonte pagadora (credito, debito, etc).
 
     Conta
 
