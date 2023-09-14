@@ -1,7 +1,8 @@
 Escopo inicial:
 
     Criar um sistema que ajude a gerenciar financas pessoais, 
-    gerando planejamentos de ciclo mensal de contas a pagar.
+    gerando planejamentos de ciclo mensal de contas a pagar,
+    assim como controle de gastos.
 	
     Planejamento Financeiro
 
