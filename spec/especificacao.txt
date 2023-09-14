@@ -6,13 +6,16 @@ Escopo inicial:
 	
     Planejamento Financeiro
 
-    Criar uma funcionalidade que gere automaticamente a cada ciclo mensal
+    => Criar uma funcionalidade que gere automaticamente a cada ciclo mensal
     uma planilha de contas a pagar, exibindo valores, data de vencimento, status,
     assim como notificacoes e alertas de vencimento de faturas.
 
+    => Criar uma interface que possibilite ao usuario visualizar a planilha de Planejamento Financeiro
+    mensal
+
     Controle de Gastos
 
-    Criar uma funcionalidade que possibilite inserir compras avulsas, detalhando dados como
+    => Criar uma funcionalidade que possibilite inserir compras avulsas, detalhando dados como
     valor, data e fonte pagadora (credito, debito, etc).
 
 Entidades do Sistema
