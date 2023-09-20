@@ -19,7 +19,6 @@ namespace confin.data.Repositories
             const string query = @"SELECT id
                                           ,descricao
                                           ,variabilidade
-                                          ,valorMedio
                                           ,observacoes
                                           ,diavencimento
                                           ,ativa
@@ -35,7 +34,6 @@ namespace confin.data.Repositories
             string query = $@"INSERT INTO Conta(
                                 descricao
                                 ,variabilidade
-                                ,valorMedio
                                 ,observacoes
                                 ,diavencimento
                                 ,dataCadastro
@@ -43,7 +41,6 @@ namespace confin.data.Repositories
                             VALUES(
                                 @Descricao,
                                 @Variabilidade,
-                                @ValorMedio,
                                 @Observacoes,
                                 @DiaVencimento
                                 ,@DataCadastro
@@ -52,7 +49,6 @@ namespace confin.data.Repositories
             DynamicParameters parameters = new();
             parameters.Add("Descricao", conta.Descricao, DbType.String);
             parameters.Add("Variabilidade", conta.Variabilidade, DbType.Int16);
-            parameters.Add("ValorMedio", conta.ValorMedio, DbType.Decimal);
             parameters.Add("Observacoes", conta.Observacoes, DbType.String);
             parameters.Add("DiaVencimento", conta.DiaVencimento, DbType.DateTime);
             parameters.Add("DataCadastro", conta.DataCadastro, DbType.DateTime);
