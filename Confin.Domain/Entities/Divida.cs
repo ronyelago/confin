@@ -1,8 +1,6 @@
-﻿namespace Confin.Domain.Entities
+﻿namespace Confin.Domain.Entities;
+public class Divida
 {
-    public class Divida
-    {
-        public int Id { get; set; }
-        public decimal Valor { get; set; }
-    }
+    public int Id { get; set; }
+    public decimal Valor { get; set; }
 }
