@@ -1,22 +1,20 @@
 using Serilog.Context;
 
-namespace confin.api.middlewares
+namespace confin.api.middlewares;
+public class RequestSerilogMiddleware
 {
-    public class RequestSerilogMiddleware
+    private readonly RequestDelegate _next;
+
+    public RequestSerilogMiddleware(RequestDelegate next)
     {
-        private readonly RequestDelegate _next;
+        _next = next;
+    }
 
-        public RequestSerilogMiddleware(RequestDelegate next)
+    public Task Invoke(HttpContext context)
+    {
+        using (LogContext.PushProperty("UserName", context?.User?.Identity?.Name ?? "anonimous"))
         {
-            _next = next;
-        }
-
-        public Task Invoke(HttpContext context)
-        {
-            using (LogContext.PushProperty("UserName", context?.User?.Identity?.Name ?? "anonimous"))
-            {
-                return _next.Invoke(context);
-            }
+            return _next.Invoke(context);
         }
     }
 }
