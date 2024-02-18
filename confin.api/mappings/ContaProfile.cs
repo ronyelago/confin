@@ -2,13 +2,11 @@ using AutoMapper;
 using confin.api.models;
 using Confin.Domain.Entities;
 
-namespace confin.api.mappings
+namespace confin.api.mappings;
+public class ContaProfile : Profile
 {
-    public class ContaProfile : Profile
+    public ContaProfile()
     {
-        public ContaProfile()
-        {
-            CreateMap<Conta, NovaContaModel>().ReverseMap();
-        }
+        CreateMap<Conta, NovaContaModel>().ReverseMap();
     }
 }
