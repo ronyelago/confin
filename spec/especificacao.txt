@@ -75,7 +75,7 @@ Entidades do Sistema
     FaturaCartao
     
         => Definição:
-            Deverá ser uma especialização da entidade ContaPagar
+            Deverá ser uma especialização da entidade Conta;
             como farei isso? ainda não sei;
 		
     
