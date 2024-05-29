@@ -76,5 +76,6 @@ Entidades do Sistema
     
         => Definição:
             Deverá ser uma especialização da entidade ContaPagar
+            como farei isso? ainda não sei;
 		
     
