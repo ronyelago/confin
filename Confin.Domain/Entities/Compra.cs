@@ -5,6 +5,8 @@ namespace Confin.Domain.Entities;
 public record Compra
 {
     public int Id { get; set; }
+    public Conta Conta { get; set; }
+    public int? ContaId { get; set; }
     public string Descricao { get; set; }
     public decimal Valor { get; set; }
     public FormaPagamento FormaPagamento { get; set; }

@@ -54,12 +54,27 @@ Entidades do Sistema
         irah inserir todas as compras efetuadas, garantindo assim
         a atualizacao constante das informacoes financeiras. 
         A funcionalidade de Compras devera se integrar a funcionalidade de Contas a Pagar
+        Uma Compra terá os seguintes campos:
+            -Id: identificador único da Compra;
+            -ContaId: Quando uma compra é feita no crédito a vista ou parcelado, o valor da fatura do cartão de crédito, 
+                que é um tipo de Conta, é incrementado. Uma Conta se relacionará com uma Compra, caso esta Compra seja do 
+                tipo Crédito a Vista ou Crédito Parcelado. Caso contrário este campo será deixado vazio;
+            -Descricao: breve descrição do que foi comprado;
+            -Valor: valor total da compra;
+            -FormaPagamento: forma de pagamento da Compra;
+            -Parcelada: campo booleano para identificar se foi uma compra parcelada ou não; 
+            -DataCompra: data em que a Compra foi realizada;
 
     => Devara haver uma interface onde sera possivel registrar uma nova Compra
 
     => A interface de registro de nova Compra devera conter os seguintes campos:
         Descricao, Valor, Tipo de Compra, Data da Compra
         - as opcoes para selecionar o Tipo de Compra serao: debito, credito a vista, credito parcelado,
-        pix e dinheiro a vista.     
+        pix e dinheiro a vista.  
+
+    FaturaCartao
+    
+        => Definição:
+            Deverá ser uma especialização da entidade ContaPagar
 		
     
