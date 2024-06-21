@@ -1,4 +1,4 @@
-using confin.domain;
+using Confin.Domain.Entities;
 
 namespace confin.api.models
 {

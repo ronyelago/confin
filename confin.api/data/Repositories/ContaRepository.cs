@@ -1,6 +1,6 @@
 using System.Data;
 using confin.api.interfaces.repositories;
-using confin.domain;
+using Confin.Domain.Entities;
 using Dapper;
 
 namespace confin.data.Repositories

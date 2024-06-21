@@ -1,6 +1,6 @@
 using Dapper;
 using System.Data;
-using confin.domain;
+using Confin.Domain.Entities;
 using confin.data.Repositories;
 using confin.data;
 using Moq;

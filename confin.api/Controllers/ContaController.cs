@@ -1,7 +1,7 @@
 using AutoMapper;
 using confin.api.interfaces.repositories;
 using confin.api.models;
-using confin.domain;
+using Confin.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 

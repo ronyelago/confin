@@ -1,6 +1,6 @@
 using AutoMapper;
 using confin.api.models;
-using confin.domain;
+using Confin.Domain.Entities;
 
 namespace confin.api.mappings
 {
