@@ -1,4 +1,4 @@
-namespace confin.domain
+namespace Confin.Domain.Entities
 {
     public class ContaPagar
     {
