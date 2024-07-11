@@ -1,9 +1,8 @@
 ﻿using Confin.Domain.Entities;
 
-namespace confin.api.interfaces.repositories
+namespace confin.api.interfaces.repositories;
+
+public interface ICompraRepository : IRepositoryBase<Compra>
 {
-    public interface ICompraRepository : IRepositoryBase<Compra>
-    {
-        
-    }
+    
 }

@@ -1,9 +1,7 @@
 using Confin.Domain.Entities;
 
-namespace confin.api.interfaces.repositories
+namespace confin.api.interfaces.repositories;
+public interface IContaRepository : IRepositoryBase<Conta>
 {
-    public interface IContaRepository : IRepositoryBase<Conta>
-    {
-        
-    }
+    
 }
