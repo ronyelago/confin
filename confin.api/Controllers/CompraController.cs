@@ -5,40 +5,39 @@ using Confin.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
-namespace confin.Controllers
+namespace confin.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class CompraController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CompraController : ControllerBase
+    private readonly ICompraRepository _compraRepository;
+    private readonly ILogger<CompraController> _logger;
+    private IMapper _mapper;
+
+    public CompraController(ICompraRepository compraRepository
+        ,IMapper mapper
+        ,ILogger<CompraController> logger)
     {
-        private readonly ICompraRepository _compraRepository;
-        private readonly ILogger<CompraController> _logger;
-        private IMapper _mapper;
+        _compraRepository = compraRepository;
+        _mapper = mapper;
+        _logger = logger;
+    }
 
-        public CompraController(ICompraRepository compraRepository
-            ,IMapper mapper
-            ,ILogger<CompraController> logger)
-        {
-            _compraRepository = compraRepository;
-            _mapper = mapper;
-            _logger = logger;
-        }
+    [HttpGet("ObterTodasCompras")]
+    public async Task<IActionResult> Get()
+    {
+        Log.Information("=> Obtendo todas as compras...");
+        var compras = await _compraRepository.GetAllAsync();
 
-        [HttpGet("ObterTodasCompras")]
-        public async Task<IActionResult> Get()
-        {
-            Log.Information("=> Obtendo todas as compras...");
-            var compras = await _compraRepository.GetAllAsync();
+        return Ok(compras);
+    }
 
-            return Ok(compras);
-        }
+    [HttpPost("NovaCompra")]
+    public async Task<IActionResult> Post([FromBody] NovaCompraModel compraModel)
+    {
+        await _compraRepository.AddAsync(_mapper.Map<Compra>(compraModel));
 
-        [HttpPost("NovaCompra")]
-        public async Task<IActionResult> Post([FromBody] NovaCompraModel compraModel)
-        {
-            await _compraRepository.AddAsync(_mapper.Map<Compra>(compraModel));
-
-            return Created("", compraModel);
-        }
+        return Created("", compraModel);
     }
 }
