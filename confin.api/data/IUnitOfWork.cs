@@ -1,9 +1,7 @@
-﻿namespace confin.data
+﻿namespace confin.data;
+public interface IUnitOfWork : IDisposable
 {
-    public interface IUnitOfWork : IDisposable
-    {
-        void BeginTransaction();
-        void Commit();
-        void Rollback();
-    }
+    void BeginTransaction();
+    void Commit();
+    void Rollback();
 }
