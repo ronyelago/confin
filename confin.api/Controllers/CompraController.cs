@@ -15,9 +15,7 @@ public class CompraController : ControllerBase
     private readonly ILogger<CompraController> _logger;
     private IMapper _mapper;
 
-    public CompraController(ICompraRepository compraRepository
-        ,IMapper mapper
-        ,ILogger<CompraController> logger)
+    public CompraController(ICompraRepository compraRepository ,IMapper mapper ,ILogger<CompraController> logger)
     {
         _compraRepository = compraRepository;
         _mapper = mapper;
