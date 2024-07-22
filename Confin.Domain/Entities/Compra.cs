@@ -14,7 +14,7 @@ public record Compra
 
 public enum FormaPagamento
 {
-    [Description("Crédito")]
+    [Description("Crédito a Vista")]
     Credito = 1,
 
     [Description("Débito")]
