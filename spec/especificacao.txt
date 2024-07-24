@@ -6,7 +6,7 @@ Escopo inicial:
 	
     Planejamento Financeiro
 
-    => Criar uma funcionalidade que gere automaticamente a cada ciclo mensal
+    => Criar uma funcionalidade que gere automaticamente, a cada ciclo mensal,
     uma planilha de contas a pagar, exibindo valores, data de vencimento, status,
     assim como notificacoes e alertas de vencimento de faturas.
 
@@ -28,7 +28,7 @@ Entidades do Sistema
             -Id
             -Descricao
             -ValorMedio: eh um campo runtime field, gerado a partir da mehdia movel 
-            -Variabilidade - este campo define o quanto o valor de uma Conta podera variar a cada novo ciclo/mes
+            -Variabilidade - este campo define o quanto o valor de uma Conta podera variar a cada novo ciclo/mes (alta, média ou baixa)
     => 
 
 	Conta a Pagar
