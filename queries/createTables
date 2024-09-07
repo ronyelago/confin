@@ -19,3 +19,4 @@ CREATE TABLE IF NOT EXISTS ContaPagar (
     Status INTEGER
 );
 
+//oi, eu sou o Goku
