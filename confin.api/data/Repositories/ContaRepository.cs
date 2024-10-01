@@ -52,8 +52,8 @@ public class ContaRepository : IContaRepository
         parameters.Add("Descricao", conta.Descricao, DbType.String);
         parameters.Add("Variabilidade", conta.Variabilidade, DbType.Int16);
         parameters.Add("Observacoes", conta.Observacoes, DbType.String);
-        parameters.Add("DiaVencimento", conta.DiaVencimento, DbType.DateTime);
-        parameters.Add("DataCadastro", conta.DataCadastro, DbType.DateTime);
+        parameters.Add("DiaVencimento", conta.DiaVencimento, DbType.Int32);
+        parameters.Add("DataCadastro", conta.DataCadastro, DbType.DateTimeOffset);
         parameters.Add("Ativa", conta.Ativa, DbType.Boolean);
 
         var result = await dbSession.Connection.ExecuteAsync(query, parameters);
