@@ -76,6 +76,6 @@ Entidades do Sistema
     
         => Definição:
             Deverá ser uma especialização da entidade Conta;
-            E o bigola?
+            E o bigola, tiu??
 		
     
