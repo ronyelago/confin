@@ -21,3 +21,7 @@ CREATE TABLE IF NOT EXISTS ContaPagar (
 
 //oi, eu sou o Goku, paizão!
 
+
+// Execute o cmd como administrador
+// Desabilide o serviço de Tempo do windows com o seguinte comando: 
+// net stop w32time
