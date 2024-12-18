@@ -1,4 +1,5 @@
 using Confin.Domain.Entities;
+using System;
 
 namespace confin.api.models;
 
