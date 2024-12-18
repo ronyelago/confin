@@ -1,3 +1,5 @@
+using System;
+
 namespace Confin.Domain.Entities;
 public class ContaPagar
 {
