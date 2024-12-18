@@ -1,4 +1,6 @@
-﻿namespace confin.data;
+﻿using System;
+
+namespace confin.data;
 public interface IUnitOfWork : IDisposable
 {
     void BeginTransaction();

@@ -2,6 +2,9 @@
 using confin.api.interfaces.repositories;
 using Dapper;
 using Confin.Domain.Entities;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace confin.data.Repositories;
 public class CompraRepository : ICompraRepository
