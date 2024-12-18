@@ -5,6 +5,8 @@ using confin.data.Repositories;
 using confin.data;
 using Moq;
 using confin.api.interfaces.repositories;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace confin.test;
 

@@ -1,4 +1,7 @@
-﻿namespace Confin.Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Confin.Domain.Entities;
 public class Conta
 {   
     public Conta()

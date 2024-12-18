@@ -3,7 +3,9 @@ using confin.api.interfaces.repositories;
 using confin.api.models;
 using Confin.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Serilog;
+using System.Threading.Tasks;
 
 namespace confin.Controllers;
 

@@ -4,6 +4,7 @@ using confin.api.models;
 using Confin.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
+using System.Threading.Tasks;
 
 namespace confin.Controllers;
 
