@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Http;
 using Serilog.Context;
+using System.Threading.Tasks;
 
 namespace confin.api.middlewares;
 public class RequestSerilogMiddleware
