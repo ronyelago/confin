@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 using confin.api.extensions;
 using confin.api.interfaces.repositories;
@@ -7,6 +8,8 @@ using confin.data;
 using confin.data.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 internal class Program
