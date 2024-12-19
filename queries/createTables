@@ -22,9 +22,4 @@ CREATE TABLE IF NOT EXISTS ContaPagar (
 //oi, eu sou o Goku, paizão!
 
 
-// Execute o cmd como administrador
-// Desabilide o serviço de Tempo do windows com o seguinte comando: 
-// net stop w32time
-// defina a data com o comando no seguinte formato:
-// date MM-DD-YYYY
 
