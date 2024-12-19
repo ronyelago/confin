@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
