@@ -4,10 +4,10 @@ CREATE TABLE IF NOT EXISTS Conta (
     ValorMedio MONEY,
     Variabilidade INTEGER,
     Ativa BOOLEAN,
-    Observacoes TEXT NULLABLE,
+    Observacoes TEXT ,
     DiaVencimento INTEGER,
     DataCadastro TIMESTAMP,
-    DataExpiracao TIMESTAMP NULLABLE
+    DataExpiracao TIMESTAMP 
 );
 
 CREATE TABLE IF NOT EXISTS ContaPagar (
